@@ -518,7 +518,9 @@
           form.reset();
           setStatus("Kiitos, tervehdys tallennettiin.", "ok");
         } catch (error) {
-          setStatus("Tallennus ei onnistunut. Yrita hetken paasta uudelleen.", "error");
+          console.error(error);
+          const errorCode = error?.code ? ` (${error.code})` : "";
+          setStatus(`Tallennus ei onnistunut${errorCode}. Tarkista Firestore-säännöt.`, "error");
         } finally {
           submitButton.disabled = false;
         }
