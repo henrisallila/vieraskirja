@@ -1,0 +1,603 @@
+<!doctype html>
+<html lang="fi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Vilhon konfirmaatiovieraskirja</title>
+    <meta
+      name="description"
+      content="Vieraskirja Vilhon konfirmaatiopäivän tervehdyksille."
+    />
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #1f2933;
+        --muted: #667085;
+        --paper: #fffdf8;
+        --panel: #ffffff;
+        --line: #ded7cc;
+        --gold: #b88934;
+        --green: #52796f;
+        --blue: #4d6d8f;
+        --rose: #b56576;
+        --shadow: 0 20px 50px rgba(68, 58, 40, 0.14);
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background:
+          radial-gradient(circle at 12% 14%, rgba(184, 137, 52, 0.16), transparent 28rem),
+          radial-gradient(circle at 86% 8%, rgba(82, 121, 111, 0.14), transparent 24rem),
+          linear-gradient(135deg, #fbf7ef 0%, #f7fbfa 48%, #fff9f8 100%);
+        color: var(--ink);
+      }
+
+      button,
+      input,
+      textarea {
+        font: inherit;
+      }
+
+      .page {
+        width: min(1120px, calc(100% - 32px));
+        margin: 0 auto;
+        padding: 32px 0 48px;
+      }
+
+      .hero {
+        display: grid;
+        grid-template-columns: minmax(0, 1.05fr) minmax(310px, 0.95fr);
+        gap: 28px;
+        align-items: stretch;
+        min-height: 420px;
+      }
+
+      .intro {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: clamp(24px, 5vw, 56px) 0;
+      }
+
+      .eyebrow {
+        color: var(--green);
+        font-size: 0.82rem;
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        max-width: 11ch;
+        margin: 12px 0 16px;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: clamp(3rem, 9vw, 6.8rem);
+        line-height: 0.92;
+        letter-spacing: 0;
+      }
+
+      .lead {
+        max-width: 640px;
+        margin: 0;
+        color: #43505c;
+        font-size: clamp(1.05rem, 2.3vw, 1.35rem);
+        line-height: 1.55;
+      }
+
+      .verse {
+        margin-top: 26px;
+        padding-left: 18px;
+        border-left: 4px solid var(--gold);
+        color: #5d5346;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 1.05rem;
+        line-height: 1.55;
+      }
+
+      .visual {
+        position: relative;
+        min-height: 390px;
+        overflow: hidden;
+        border: 1px solid rgba(116, 99, 70, 0.16);
+        border-radius: 8px;
+        background:
+          linear-gradient(rgba(31, 41, 51, 0.06), rgba(31, 41, 51, 0.18)),
+          url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 900 1100'%3E%3Cdefs%3E%3ClinearGradient id='sky' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23fff8ea'/%3E%3Cstop offset='0.48' stop-color='%23e9f2ef'/%3E%3Cstop offset='1' stop-color='%23f8eceb'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='900' height='1100' fill='url(%23sky)'/%3E%3Cpath d='M0 760c130-78 276-111 438-99 172 12 304-21 462-107v546H0z' fill='%23f4ede0'/%3E%3Cpath d='M0 835c158-55 315-57 474-6 167 54 307 47 426-20v291H0z' fill='%23dfece8'/%3E%3Ccircle cx='218' cy='202' r='86' fill='%23f1d8a8' opacity='.9'/%3E%3Cg fill='none' stroke='%239ab3aa' stroke-width='11' stroke-linecap='round'%3E%3Cpath d='M638 320c-62 91-101 196-116 314'/%3E%3Cpath d='M526 544c-52-50-104-82-156-95'/%3E%3Cpath d='M553 468c63-44 129-66 198-65'/%3E%3C/g%3E%3Cg fill='%23ffffff' opacity='.93'%3E%3Cellipse cx='366' cy='440' rx='49' ry='78' transform='rotate(-35 366 440)'/%3E%3Cellipse cx='408' cy='412' rx='47' ry='77' transform='rotate(22 408 412)'/%3E%3Cellipse cx='455' cy='442' rx='47' ry='77' transform='rotate(39 455 442)'/%3E%3Ccircle cx='411' cy='454' r='35' fill='%23d7a84f'/%3E%3C/g%3E%3Cg fill='%23fffaf2' opacity='.92'%3E%3Cellipse cx='693' cy='387' rx='36' ry='58' transform='rotate(-34 693 387)'/%3E%3Cellipse cx='725' cy='368' rx='35' ry='58' transform='rotate(22 725 368)'/%3E%3Cellipse cx='759' cy='392' rx='35' ry='58' transform='rotate(38 759 392)'/%3E%3Ccircle cx='727' cy='399' r='26' fill='%23c89544'/%3E%3C/g%3E%3C/svg%3E");
+        background-size: cover;
+        box-shadow: var(--shadow);
+      }
+
+      .visual::after {
+        content: "";
+        position: absolute;
+        inset: 18px;
+        border: 1px solid rgba(255, 255, 255, 0.72);
+        border-radius: 6px;
+        pointer-events: none;
+      }
+
+      .main {
+        display: grid;
+        grid-template-columns: minmax(280px, 420px) minmax(0, 1fr);
+        gap: 24px;
+        margin-top: 12px;
+        align-items: start;
+      }
+
+      .panel {
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.86);
+        box-shadow: 0 16px 34px rgba(52, 45, 34, 0.09);
+      }
+
+      .form-panel {
+        position: sticky;
+        top: 20px;
+        padding: 22px;
+      }
+
+      h2 {
+        margin: 0 0 16px;
+        font-size: 1.15rem;
+        line-height: 1.25;
+      }
+
+      label {
+        display: block;
+        margin: 14px 0 7px;
+        color: #344054;
+        font-size: 0.94rem;
+        font-weight: 700;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        border: 1px solid #cfc6b8;
+        border-radius: 6px;
+        background: #fffefa;
+        color: var(--ink);
+        outline: none;
+        transition:
+          border-color 160ms ease,
+          box-shadow 160ms ease;
+      }
+
+      input {
+        min-height: 46px;
+        padding: 10px 12px;
+      }
+
+      textarea {
+        min-height: 132px;
+        resize: vertical;
+        padding: 12px;
+        line-height: 1.45;
+      }
+
+      input:focus,
+      textarea:focus {
+        border-color: var(--green);
+        box-shadow: 0 0 0 4px rgba(82, 121, 111, 0.15);
+      }
+
+      .actions {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-top: 16px;
+      }
+
+      .send {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 46px;
+        padding: 0 18px;
+        border: 0;
+        border-radius: 6px;
+        background: var(--green);
+        color: #fff;
+        font-weight: 800;
+        cursor: pointer;
+        transition:
+          transform 160ms ease,
+          background 160ms ease;
+      }
+
+      .send:hover {
+        background: #42675e;
+      }
+
+      .send:active {
+        transform: translateY(1px);
+      }
+
+      .send:disabled {
+        cursor: wait;
+        opacity: 0.68;
+      }
+
+      .status {
+        min-height: 22px;
+        color: var(--muted);
+        font-size: 0.92rem;
+        line-height: 1.35;
+      }
+
+      .status.error {
+        color: #a33b3b;
+      }
+
+      .status.ok {
+        color: #2f6d54;
+      }
+
+      .guestbook {
+        padding: 22px;
+      }
+
+      .guestbook-head {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 16px;
+        margin-bottom: 16px;
+      }
+
+      .count {
+        color: var(--muted);
+        font-size: 0.95rem;
+        white-space: nowrap;
+      }
+
+      .messages {
+        display: grid;
+        gap: 14px;
+      }
+
+      .message {
+        position: relative;
+        padding: 18px;
+        border: 1px solid #e3dace;
+        border-radius: 8px;
+        background: var(--paper);
+      }
+
+      .message::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 5px;
+        height: 100%;
+        border-radius: 8px 0 0 8px;
+        background: var(--rose);
+      }
+
+      .message:nth-child(3n + 2)::before {
+        background: var(--gold);
+      }
+
+      .message:nth-child(3n)::before {
+        background: var(--blue);
+      }
+
+      .message-text {
+        margin: 0 0 14px;
+        white-space: pre-wrap;
+        color: #344054;
+        font-size: 1rem;
+        line-height: 1.58;
+      }
+
+      .message-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        color: var(--muted);
+        font-size: 0.88rem;
+      }
+
+      .name {
+        color: var(--ink);
+        font-weight: 800;
+      }
+
+      .empty {
+        padding: 30px;
+        border: 1px dashed #cfc6b8;
+        border-radius: 8px;
+        color: var(--muted);
+        text-align: center;
+      }
+
+      .setup-note {
+        margin-top: 14px;
+        padding: 12px;
+        border: 1px solid rgba(184, 137, 52, 0.34);
+        border-radius: 6px;
+        background: rgba(255, 248, 234, 0.78);
+        color: #6b5631;
+        font-size: 0.9rem;
+        line-height: 1.4;
+      }
+
+      @media (max-width: 860px) {
+        .page {
+          width: min(100% - 22px, 680px);
+          padding-top: 18px;
+        }
+
+        .hero,
+        .main {
+          grid-template-columns: 1fr;
+        }
+
+        .intro {
+          padding: 18px 0 8px;
+        }
+
+        .visual {
+          min-height: 260px;
+        }
+
+        .form-panel {
+          position: static;
+        }
+
+        .guestbook-head {
+          align-items: start;
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <section class="hero" aria-labelledby="page-title">
+        <div class="intro">
+          <div class="eyebrow">Konfirmaatiopäivän vieraskirja</div>
+          <h1 id="page-title">Vilhon juhla</h1>
+          <p class="lead">
+            Jätä Vilholle tervehdys, muisto tai kommentti juhlapäivän kunniaksi.
+            Tervehdykset tallentuvat yhteiseen vieraskirjaan.
+          </p>
+  
+        </div>
+        <div class="visual" aria-hidden="true"></div>
+      </section>
+
+      <section class="main">
+        <form class="panel form-panel" id="guestbook-form">
+          <h2>Kirjoita tervehdys</h2>
+
+          <label for="name">Nimesi</label>
+          <input
+            id="name"
+            name="name"
+            autocomplete="name"
+            maxlength="80"
+            required
+            placeholder="Esim. Kummi, mummu tai kaveri"
+          />
+
+          <label for="message">Tervehdys Vilholle</label>
+          <textarea
+            id="message"
+            name="message"
+            maxlength="900"
+            required
+            placeholder="Kirjoita tähän oma tervehdyksesi..."
+          ></textarea>
+
+          <div class="actions">
+            <button class="send" type="submit">Lähetä</button>
+            <div class="status" id="status" role="status" aria-live="polite"></div>
+          </div>
+
+          <div class="setup-note" id="setup-note" hidden>
+            Firebase-asetuksia ei ole vielä lisätty, joten tervehdykset näkyvät
+            vain tässä selaimessa esikatselua varten.
+          </div>
+        </form>
+
+        <section class="panel guestbook" aria-labelledby="guestbook-title">
+          <div class="guestbook-head">
+            <h2 id="guestbook-title">Tervehdykset</h2>
+            <div class="count" id="count">0 tervehdystä</div>
+          </div>
+          <div class="messages" id="messages"></div>
+        </section>
+      </section>
+    </main>
+
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js";
+      import {
+        addDoc,
+        collection,
+        getFirestore,
+        limit,
+        onSnapshot,
+        orderBy,
+        query,
+        serverTimestamp
+      } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
+
+  const firebaseConfig = {
+      apiKey: "AIzaSyBti-LSLImXsSpFHOleiJASp1PBRPBaw0c",
+      authDomain: "treenihaaste-15c92.firebaseapp.com",
+      projectId: "treenihaaste-15c92",
+      storageBucket: "treenihaaste-15c92.firebasestorage.app",
+      messagingSenderId: "1031392742682",
+      appId: "1:1031392742682:web:ee1034b0480e07015370a3"
+    };
+
+      const form = document.querySelector("#guestbook-form");
+      const nameInput = document.querySelector("#name");
+      const messageInput = document.querySelector("#message");
+      const statusEl = document.querySelector("#status");
+      const messagesEl = document.querySelector("#messages");
+      const countEl = document.querySelector("#count");
+      const setupNote = document.querySelector("#setup-note");
+      const submitButton = form.querySelector("button[type='submit']");
+      const localStorageKey = "vilhon-vieraskirja-tervehdykset";
+
+      const hasFirebaseConfig = Object.values(firebaseConfig).every(Boolean);
+      let saveMessage = saveLocalMessage;
+
+      setupNote.hidden = hasFirebaseConfig;
+
+      if (hasFirebaseConfig) {
+        const app = initializeApp(firebaseConfig);
+        const db = getFirestore(app);
+        const greetingsRef = collection(db, "greetings");
+        const greetingsQuery = query(
+          greetingsRef,
+          orderBy("createdAt", "desc"),
+          limit(100)
+        );
+
+        saveMessage = async (entry) => {
+          await addDoc(greetingsRef, {
+            ...entry,
+            createdAt: serverTimestamp()
+          });
+        };
+
+        onSnapshot(
+          greetingsQuery,
+          (snapshot) => {
+            const greetings = snapshot.docs.map((doc) => ({
+              id: doc.id,
+              ...doc.data()
+            }));
+            renderMessages(greetings);
+          },
+          () => {
+            setStatus(
+              "Tervehdysten lataaminen ei onnistunut. Tarkista Firestore-asetukset.",
+              "error"
+            );
+          }
+        );
+      } else {
+        renderMessages(readLocalMessages());
+      }
+
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        const entry = {
+          name: cleanText(nameInput.value, 80),
+          message: cleanText(messageInput.value, 900),
+          createdAt: new Date()
+        };
+
+        if (!entry.name || !entry.message) {
+          setStatus("Täytä nimi ja tervehdys.", "error");
+          return;
+        }
+
+        submitButton.disabled = true;
+        setStatus("Lähetetään...", "");
+
+        try {
+          await saveMessage(entry);
+          form.reset();
+          setStatus("Kiitos, tervehdys tallennettiin.", "ok");
+        } catch (error) {
+          setStatus("Tallennus ei onnistunut. Yrita hetken paasta uudelleen.", "error");
+        } finally {
+          submitButton.disabled = false;
+        }
+      });
+
+      function cleanText(value, maxLength) {
+        return value.replace(/\s+/g, " ").trim().slice(0, maxLength);
+      }
+
+      function saveLocalMessage(entry) {
+        const greetings = readLocalMessages();
+        const nextGreetings = [{ ...entry, id: crypto.randomUUID() }, ...greetings].slice(
+          0,
+          100
+        );
+        localStorage.setItem(localStorageKey, JSON.stringify(nextGreetings));
+        renderMessages(nextGreetings);
+      }
+
+      function readLocalMessages() {
+        try {
+          return JSON.parse(localStorage.getItem(localStorageKey)) ?? [];
+        } catch {
+          return [];
+        }
+      }
+
+      function renderMessages(greetings) {
+        countEl.textContent = `${greetings.length} ${greetings.length === 1 ? "tervehdys" : "tervehdystä"}`;
+
+        if (!greetings.length) {
+          messagesEl.innerHTML =
+            '<div class="empty">Ensimmäinen tervehdys odottaa kirjoittajaansa.</div>';
+          return;
+        }
+
+        messagesEl.replaceChildren(
+          ...greetings.map((greeting) => {
+            const article = document.createElement("article");
+            article.className = "message";
+
+            const text = document.createElement("p");
+            text.className = "message-text";
+            text.textContent = greeting.message;
+
+            const meta = document.createElement("div");
+            meta.className = "message-meta";
+
+            const name = document.createElement("span");
+            name.className = "name";
+            name.textContent = greeting.name;
+
+            const date = document.createElement("span");
+            date.textContent = formatDate(greeting.createdAt);
+
+            meta.append(name, date);
+            article.append(text, meta);
+            return article;
+          })
+        );
+      }
+
+      function formatDate(value) {
+        const date = value?.toDate ? value.toDate() : new Date(value);
+        if (Number.isNaN(date.getTime())) {
+          return "";
+        }
+        return new Intl.DateTimeFormat("fi-FI", {
+          day: "numeric",
+          month: "numeric",
+          year: "numeric",
+          hour: "2-digit",
+          minute: "2-digit"
+        }).format(date);
+      }
+
+      function setStatus(message, type) {
+        statusEl.textContent = message;
+        statusEl.className = `status ${type}`;
+      }
+    </script>
+  </body>
+</html>
